@@ -19,6 +19,8 @@ module FindPi
   # of decimal places and return as a string
   def self.compute_machin_like(decimal_places)
     # compute Machin-Like formula and trim to appropriate decimal places
+    # Note: using an additional 10 decimal places to avoiding rounding
+    # errors
     "%.#{decimal_places + 10}f" % (4.0 * (22.0 * Math.atan(24478.0/873121.0) + 17.0 * Math.atan(685601.0/69049993.0)))
   end
 
@@ -27,7 +29,9 @@ module FindPi
   # to the given number of decimal places and return as a string
   def self.compute_machin(decimal_places)
     # compute Machin formula and trim to appropriate decimal places
-    "%.#{decimal_places}f" % (16.0 * Math.atan(1.0/5.0) - 4.0 * Math.atan(1.0/239.0))
+    # Note: using an additional 10 decimal places to avoiding rounding
+    # errors
+    "%.#{decimal_places + 10}f" % (16.0 * Math.atan(1.0/5.0) - 4.0 * Math.atan(1.0/239.0))
   end
 
 end
