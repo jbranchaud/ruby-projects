@@ -34,13 +34,19 @@ module FindPi
     "%.#{decimal_places + 10}f" % (16.0 * Math.atan(1.0/5.0) - 4.0 * Math.atan(1.0/239.0))
   end
 
+  def self.prompt_user
+    print "How many digits of Pi would you like to compute: "
+    decimal_places = gets.chomp
+
+    puts FindPi.find(decimal_places.to_i)
+  end
+
+
+
 end
 
 if __FILE__==$0
   
-  print "How many digits of Pi would you like to compute: "
-  decimal_places = gets.chomp
-
-  puts FindPi.find(decimal_places.to_i)
+  FindPi.prompt_user
 
 end
