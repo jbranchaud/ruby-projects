@@ -31,3 +31,12 @@ module FindPi
   end
 
 end
+
+if __FILE__==$0
+  
+  print "How many digits of Pi would you like to compute: "
+  decimal_places = gets.chomp
+
+  puts FindPi.find(decimal_places.to_i)
+
+end
