@@ -1,29 +1,17 @@
-# Fibonacci
+# Fibonacci Sequence
 
-TODO: Write a gem description
+Enter a number, `N`, and have the program generate the Fibonacci sequence to Nth number.
 
-## Installation
+## Tests
 
-Add this line to your application's Gemfile:
+    $ fib(0) => 0
 
-    gem 'fibonacci'
+    $ fib(1) => 0,1
 
-And then execute:
+    $ fib(2) => 0,1,1
 
-    $ bundle
+    $ fib(13) => 0,1,1,2,3,5,8,13,21,34,55,89,144
 
-Or install it yourself as:
+    $ fib(-2) => yo, no negatives
 
-    $ gem install fibonacci
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( http://github.com/<my-github-username>/fibonacci/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+    $ fib(10**999) => oooh, too many
