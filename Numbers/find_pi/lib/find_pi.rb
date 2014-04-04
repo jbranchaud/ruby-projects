@@ -1,7 +1,5 @@
 # Find PI to the Nth Digit
 
-require 'bigdecimal'
-
 module FindPi
   
   # computes Pi to the given number of decimal places, returning the
