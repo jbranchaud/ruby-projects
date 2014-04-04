@@ -9,7 +9,11 @@ Keep a limit to how far the program will go.
 You can view the solution in
 [`lib/find_pi.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/Numbers/find_pi/lib/find_pi.rb).
 
-You can run the solution like so:
+You can run the solution with rake like so:
+
+    rake
+
+Or directly with ruby like so:
 
     ruby ./lib/find_pi.rb
 
