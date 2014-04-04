@@ -32,3 +32,10 @@ You can run the solution like so:
 
     # ./find-pi.rb 10001
     $ error: too big, not gonna do that to your CPU
+
+## Resources
+
+- [Similar problem and some solutions in
+  Ruby](http://rubyquiz.strd6.com/quizzes/202-digits-of-pi)
+- [High precision solution in Python using Machin
+  formula](http://en.literateprograms.org/Pi_with_Machin%27s_formula_(Python\))
