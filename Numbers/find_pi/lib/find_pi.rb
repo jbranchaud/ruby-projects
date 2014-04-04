@@ -10,7 +10,7 @@ module FindPi
     elsif decimal_places < 0 || decimal_places > 45
       "error"
     else
-      self.compute_machin_like(decimal_places)
+      self.compute_machin_like(decimal_places)[0, decimal_places + 2]
     end
   end
 
@@ -19,7 +19,7 @@ module FindPi
   # of decimal places and return as a string
   def self.compute_machin_like(decimal_places)
     # compute Machin-Like formula and trim to appropriate decimal places
-    "%.#{decimal_places}f" % (4.0 * (22.0 * Math.atan(24478.0/873121.0) + 17.0 * Math.atan(685601.0/69049993.0)))
+    "%.#{decimal_places + 10}f" % (4.0 * (22.0 * Math.atan(24478.0/873121.0) + 17.0 * Math.atan(685601.0/69049993.0)))
   end
 
   # compute Machin formula
