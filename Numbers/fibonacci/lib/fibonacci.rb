@@ -33,4 +33,15 @@ module Fibonacci
     return self.compute_nth(n-1) + self.compute_nth(n-2)
   end
 
+  def self.prompt_user
+    print "How many values of the fibonacci sequence to compute: "
+    n = gets.chomp
+
+    puts self.compute_to_nth(n.to_i)
+  end
+
+end
+
+if __FILE__==$0
+  Fibonacci.prompt_user
 end
