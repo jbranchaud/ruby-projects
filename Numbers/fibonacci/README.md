@@ -2,6 +2,19 @@
 
 Enter a number, `N`, and have the program generate the Fibonacci sequence to Nth number.
 
+## Solution
+
+You can view the solution in
+[`lib/fibonacci.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/Numbers/fibonacci/lib/fibonacci.rb)
+
+You can run the solution with rake like so:
+
+    rake
+
+Or directly with ruby like so:
+
+    ruby ./lib/fibonacci.rb
+
 ## Tests
 
     $ fib(0) => 0
