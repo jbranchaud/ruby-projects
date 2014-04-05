@@ -1,7 +1,10 @@
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
+require "./lib/fibonacci.rb"
 
 RSpec::Core::RakeTask.new(:spec)
 
-task :default => :spec
+task :default do
+  Fibonacci.prompt_user
+end
 task :test => :spec
