@@ -13,6 +13,9 @@ module Fibonacci
     sequence_array.join(',')
   end
 
+  # given a positive integer, n, this method will compute the Nth value in
+  # the fibonacci sequence such that the 0th is 0, the 1st is 1, and so
+  # forth. The resulting integer value will be returned.
   def self.compute_nth(n)
     return "error" if n < 0
     return 0 if n == 0
