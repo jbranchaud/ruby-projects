@@ -28,3 +28,9 @@ Or directly with ruby like so:
     $ fib(-2) => yo, no negatives
 
     $ fib(10**999) => oooh, too many
+
+## TODO
+
+- Add tests for helper functions
+- Implement alternative solution that computes fibonacci sequence up to N
+- Add prompt for alternative solution
