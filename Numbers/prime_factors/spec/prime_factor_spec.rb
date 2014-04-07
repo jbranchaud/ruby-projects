@@ -40,6 +40,13 @@ describe PrimeFactors do
       end
     end
 
+    it "should return error text for an integer less than 2" do
+      bad_ints = [0,1,-1,-17,-144]
+      bad_ints.each do |int|
+        PrimeFactors.least_divisor(int).should eq("error")
+      end
+    end
+
   end
 
 end
