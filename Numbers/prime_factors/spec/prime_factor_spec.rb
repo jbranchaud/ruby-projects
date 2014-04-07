@@ -22,6 +22,13 @@ describe PrimeFactors do
       end
     end
 
+    it "should return false given an integer less than 2" do
+      bad_ints = [0,1,-1,-11]
+      bad_ints.each do |int|
+        PrimeFactors.is_prime?(int).should eq(false)
+      end
+    end
+
   end
 
 end
