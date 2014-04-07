@@ -5,6 +5,6 @@ require "./lib/prime_factors.rb"
 RSpec::Core::RakeTask.new(:spec)
 
 task :default do
-  true
+  PrimeFactors.prompt_user
 end
 task :test => :spec

@@ -1,4 +1,4 @@
-require "prime_factors/version"
+# Prime Factors
 
 module PrimeFactors
 
@@ -41,4 +41,15 @@ module PrimeFactors
     end
   end
 
+  # prompt the user for an integer to compute the prime factors for
+  def self.prompt_user
+    print "Compute the prime factors for: "
+    n = gets.chomp
+    puts self.compute(n.to_i).to_s
+  end
+
+end
+
+if __FILE__==$0
+  PrimeFactors.prompt_user
 end
