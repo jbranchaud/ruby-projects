@@ -6,6 +6,28 @@ describe PrimeFactors do
     true
   end
 
+  describe 'compute' do
+
+    it "should return the full list of prime factors for a given integer" do
+      prime_factors_hash = {
+        2 => [2],
+        3 => [3],
+        4 => [2,2],
+        5 => [5],
+        9 => [3,3],
+        17 => [17],
+        42 => [2,3,7],
+        90 => [2,3,3,5],
+        899 => [29,31],
+        960 => [2,2,2,2,2,2,3,5]
+      }
+      prime_factors_hash.each do |n,prime_factors|
+        PrimeFactors.compute(n).sort.should eq(prime_factors)
+      end
+    end
+
+  end
+
   describe 'is_prime?' do
     
     it "should return true given a prime number" do
