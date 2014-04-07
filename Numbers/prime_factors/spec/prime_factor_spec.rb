@@ -15,6 +15,13 @@ describe PrimeFactors do
       end
     end
 
+    it "should return false given a non-prime number" do
+      non_primes = [4,6,12,99,132,1000]
+      non_primes.each do |non_prime|
+        PrimeFactors.is_prime?(non_prime).should eq(false)
+      end
+    end
+
   end
 
 end
