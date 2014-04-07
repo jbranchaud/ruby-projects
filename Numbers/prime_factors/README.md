@@ -21,11 +21,11 @@ Or directly with ruby like so:
 
     $ prime_factors(3) => 3
 
-    $ prime_factors(4) => 2
+    $ prime_factors(4) => 2,2
 
-    $ prime_factors(44) => 2,11
+    $ prime_factors(44) => 2,2,11
 
-    $ prime_factors(360) => 2,3,5
+    $ prime_factors(360) => 2,2,2,3,3,5
 
     $ prime_factors(1) => # nothing, must use value greater than 1
 
