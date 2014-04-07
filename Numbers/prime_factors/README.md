@@ -2,6 +2,19 @@
 
 Have the user enter a number and find all Prime Factors (if there are any) and display them.
 
+## Solution
+
+You can view the solution in
+[`lib/prime_factors.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/Numbers/prime_factors/lib/prime_factors.rb)
+
+You can run the solution with rake like so:
+
+    rake
+
+Or directly with ruby like so:
+
+    ruby ./lib/prime_factors.rb
+
 ## Tests
 
     $ prime_factors(2) => 2
