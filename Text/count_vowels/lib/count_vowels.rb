@@ -1,4 +1,4 @@
-require "count_vowels/version"
+# Count Vowels
 
 module CountVowels
   # Your code goes here...
