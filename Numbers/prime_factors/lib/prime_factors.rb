@@ -2,6 +2,22 @@ require "prime_factors/version"
 
 module PrimeFactors
 
+  # compute a full list of prime factors of a given integer, n
+  # while n is greater than 1,
+  #   get the least divisor of n
+  #   add it to the list of least factors
+  #   set n to be n divided by the least factor
+  # return least factors
+  def self.compute(n)
+    least_factors = []
+    while n > 1 do
+      factor = self.least_divisor(n)
+      least_factors.push(factor)
+      n = n / factor
+    end
+    return least_factors
+  end
+
   # determine if a given integer, n, is a prime number
   # if n <= 1, then return false
   # if n % m == 0 for any integer m, where 2 <= m < n, return false
