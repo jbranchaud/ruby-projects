@@ -26,6 +26,13 @@ describe PrimeFactors do
       end
     end
 
+    it "should return an empty list for an integer less than 2" do
+      bad_ints = [1,0,-1,-11,-24]
+      bad_ints.each do |int|
+        PrimeFactors.compute(int).should eq([])
+      end
+    end
+
   end
 
   describe 'is_prime?' do
