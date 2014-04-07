@@ -31,4 +31,15 @@ describe PrimeFactors do
 
   end
 
+  describe 'least_divisor' do
+
+    it "should return the least divisor of an integer" do
+      divisor_hash = {4 => 2, 6 => 2, 9 => 3, 5 => 5, 42 => 2}
+      divisor_hash.each do |x,y|
+        PrimeFactors.least_divisor(x).should eq(y)
+      end
+    end
+
+  end
+
 end
