@@ -40,7 +40,7 @@ describe CountVowels do
         "a" => 3,
         "e" => 4,
         "i" => 1,
-        "o" => 2,
+        "o" => 3,
         "u" => 4,
         "A" => 1,
         "O" => 1
