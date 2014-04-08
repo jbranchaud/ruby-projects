@@ -4,8 +4,8 @@ Enter a string and the program counts the number of vowels in the text.
 
 ## Extensions
 
-- [x] For added complexity have it report a sum of each vowel found.
-- [x] Prompt the user to input a file name instead of a string and count the
+- :ballot_box_with_check: For added complexity have it report a sum of each vowel found.
+- :ballot_box_with_check: Prompt the user to input a file name instead of a string and count the
   vowels in that file.
 
 ## Solution
