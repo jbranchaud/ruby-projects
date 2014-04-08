@@ -8,6 +8,19 @@ Enter a string and the program counts the number of vowels in the text.
 - Prompt the user to input a file name instead of a string and count the
   vowels in that file.
 
+## Solution
+
+You can view the solution in
+[`lib/count_vowels.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/text/count_vowels/lib/count_vowels.rb)
+
+You can run the solution with rake like so:
+
+    rake
+
+Or directly with ruby like so:
+
+    ruby ./lib/count_vowels.rb
+
 ## Tests
 
     "a" =>  1,
