@@ -5,6 +5,6 @@ require "./lib/count_vowels.rb"
 RSpec::Core::RakeTask.new(:spec)
 
 task :default do
-  true
+  CountVowels.prompt_user
 end
 task :test => :spec
