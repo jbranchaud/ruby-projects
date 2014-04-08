@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe CountVowels do
 
-  it 'should do something useful' do
-    false.should eq(true)
-  end
-
   describe 'count_vowels' do
 
     it "should return the number of vowels in a given string" do
