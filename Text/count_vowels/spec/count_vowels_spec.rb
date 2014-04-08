@@ -20,4 +20,38 @@ describe CountVowels do
 
   end
 
+  describe 'count_each_vowel' do
+
+    it "should return a hash of vowels to their respective counts" do
+      string1 = "a"
+      hash1 = {
+        "a" => 1
+      }
+      hash1b = {
+        "a" => 1
+      }
+      string2 = "hello, world!"
+      hash2 = {
+        "e" => 1,
+        "o" => 2
+      }
+      string3 = "Keep your guard up and watch out for the epic HAXORZ!"
+      hash3 = {
+        "a" => 3,
+        "e" => 4,
+        "i" => 1,
+        "o" => 2,
+        "u" => 4,
+        "A" => 1,
+        "O" => 1
+      }
+      # compare each the result of running each string through
+      # count_each_vowel with the oracle hashes from above.
+      CountVowels.count_each_vowel(string1).should eq(hash1)
+      CountVowels.count_each_vowel(string2).should eq(hash2)
+      CountVowels.count_each_vowel(string3).should eq(hash3)
+    end
+
+  end
+
 end
