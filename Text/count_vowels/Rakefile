@@ -1,6 +1,10 @@
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
+require "./lib/count_vowels.rb"
 
 RSpec::Core::RakeTask.new(:spec)
 
-task :default => :spec
+task :default do
+  true
+end
+task :test => :spec
