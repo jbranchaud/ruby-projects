@@ -52,7 +52,15 @@ module CountVowels
     print "Enter a string, we will produce a count of each vowel's occurrence: "
     string = gets.chomp
 
-    puts self.count_each_vowel(string)
+    self.put_vowel_hash(self.count_each_vowel(string))
+  end
+
+  # given a hash of vowel counts (strings to ints), print the hash in a
+  # user-friendly way
+  def self.put_vowel_hash(vowel_hash)
+    vowel_hash.each do |vowel,count|
+      puts "#{vowel}: #{count}"
+    end
   end
 
 end
