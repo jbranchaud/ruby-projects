@@ -31,6 +31,21 @@ module Palindrome
     end
   end
 
+  # given a string, find all substring palindromes of that string and return
+  # them as an array of strings. This includes the string itself if it is a
+  # palindrome.
+  def self.find_all_substring_palindromes(string)
+    return [string] if string == ""
+    palindromes = []
+    n = string.length - 1
+    (0..n).each do |i|
+      (0..i).each do |j|
+        palindromes << string[j..(n-i+j)] if Palindrome.palindrome?(string[j..(n-i+j)])
+      end
+    end
+    return palindromes
+  end
+
   # get the input string either from the user or from a file provided by the
   # user
   # if input_option == 1, get the input from the user
@@ -69,6 +84,8 @@ module Palindrome
     else
       puts "The input is a palindrome."
     end
+    puts "The following is a list of all substring palindromes for the input:"
+    puts self.find_all_substring_palindromes(input_string).join(", ")
   end
 
 end
