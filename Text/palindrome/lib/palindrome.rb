@@ -16,4 +16,19 @@ module Palindrome
     return true
   end
 
+  # given a stirng, determine the largest substring within the string that
+  # is a plaindrome. If the string itself is a palindrome, then it will be
+  # the result. If there is no substring that is a palindrome, then the
+  # first character of the string (as well as all subsequent characters) is
+  # the longest palindrome and will be returned.
+  def self.largest_palindrome(string)
+    return string if string == ""
+    n = string.length-1
+    (0..n).each do |i|
+      (0..i).each do |j|
+        return string[j..(n-i+j)] if Palindrome.palindrome?(string[j..(n-i+j)])
+      end
+    end
+  end
+
 end
