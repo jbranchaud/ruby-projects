@@ -9,6 +9,19 @@ Checks if the string entered by the user is a palindrome. That is if it reads th
   a palindrome.
 - Find all substring palindromes in the given input.
 
+## Solution
+
+You can view the solution in
+[`lib/palindrome.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/text/palindrome/lib/palindrome.rb)
+
+You can run the solution with rake like so:
+
+    rake
+
+Or directly with ruby like so:
+
+    ruby ./lib/palindrome.rb
+
 ## Tests
 
     $ palindrome("palindrome") => false
