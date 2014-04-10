@@ -20,4 +20,22 @@ describe Palindrome do
 
   end
 
+  describe "largest_palindrome" do
+
+    it "should return the largest substring that is the same forwards and backwards" do
+      strings = {"" => "",
+                 "z" => "z",
+                 "#bob" => "bob",
+                 "palindrome" => "p",
+                 "google" => "goog",
+                 "AManAPlanACanalPanama" => "ana",
+                 "A Man A Plan A Canal Panama" => "ana",
+                 "YOLO" => "OLO"}
+      strings.each do |string,result|
+        Palindrome.largest_palindrome(string).should eq(result)
+      end
+    end
+
+  end
+
 end
