@@ -31,4 +31,49 @@ module Palindrome
     end
   end
 
+  # get the input string either from the user or from a file provided by the
+  # user
+  # if input_option == 1, get the input from the user
+  # if input_option == 2, get a filename and grab its first line
+  def self.get_input_string(input_option)
+    if input_option == 1
+      print "Please type the text you would like to check for palindrome: "
+      return gets.chomp
+    elsif input_option == 2
+      print "Please enter the path of the file you would like to use: "
+      filename = gets.chomp
+      return File.open(filename, &:readline)
+    else
+      return ""
+    end
+  end
+
+  # prompt the user to input a string or a file to run the palindrome check
+  # on.
+  def self.prompt_user
+    puts "## Palindrome ##"
+    puts "1. Enter text by hand and check if it is a palindrome."
+    puts "2. Enter a filename to check the first line for a palindrome."
+    print "Choose an option (1/2): "
+    input_option = gets.chomp.to_i
+    
+    input_string = self.get_input_string(input_option)
+
+    puts "Now checking the palindromicity of:"
+    puts input_string
+
+    is_palindrome = self.palindrome?(input_string)
+    if !is_palindrome
+      puts "The input is not a palindrome, though the largest substring palindrome is:"
+      puts self.longest_palindrome(input_string)
+    else
+      puts "The input is a palindrome."
+    end
+  end
+
+end
+
+# call this code if the file is invoked directly
+if __FILE__==$0
+  Palindrome.prompt_user
 end
