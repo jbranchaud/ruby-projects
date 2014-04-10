@@ -4,5 +4,7 @@ require "./lib/palindrome.rb"
 
 RSpec::Core::RakeTask.new(:spec)
 
-task :default => Palindrome.prompt_user
+task :default do
+  Palindrome.prompt_user
+end
 task :test => :spec
