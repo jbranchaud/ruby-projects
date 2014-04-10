@@ -21,7 +21,7 @@ module Palindrome
   # the result. If there is no substring that is a palindrome, then the
   # first character of the string (as well as all subsequent characters) is
   # the longest palindrome and will be returned.
-  def self.largest_palindrome(string)
+  def self.longest_palindrome(string)
     return string if string == ""
     n = string.length-1
     (0..n).each do |i|
