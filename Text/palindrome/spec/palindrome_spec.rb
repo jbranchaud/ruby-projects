@@ -29,7 +29,7 @@ describe Palindrome do
                  "palindrome" => "p",
                  "google" => "goog",
                  "AManAPlanACanalPanama" => "ana",
-                 "A Man A Plan A Canal Panama" => "ana",
+                 "A Man A Plan A Canal Panama" => " A ",
                  "YOLO" => "OLO"}
       strings.each do |string,result|
         Palindrome.largest_palindrome(string).should eq(result)
