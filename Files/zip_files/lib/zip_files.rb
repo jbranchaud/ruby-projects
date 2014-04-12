@@ -17,15 +17,15 @@ module ZipFiles
 
   # list each file (no directories) in the given directory
   def self.list_files_in_directory(directory=".")
-    Dir["#{directory}/*.*"].each do |file|
-      puts "- #{file}"
+    Dir["#{directory}/*"].each do |file|
+      puts "- #{file}" if File.file?(file)
     end
   end
 
 end
 
 if __FILE__==$0
-  ZipFiles.list_files_in_directory
+  ZipFiles.list_files_in_directory("./")
   puts "About to zip the current directory files"
   ZipFiles.zip_current_directory_files
   puts "Done zipping the current directory files"
