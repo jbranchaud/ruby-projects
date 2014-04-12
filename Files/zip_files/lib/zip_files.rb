@@ -1,3 +1,4 @@
+require 'pathname'
 require 'zip'
 
 module ZipFiles
@@ -17,7 +18,8 @@ module ZipFiles
 
   # list each file (no directories) in the given directory
   def self.list_files_in_directory(directory=".")
-    Dir["#{directory}/*"].each do |file|
+    directory_pathname = Pathname.new(directory)
+    Dir["#{directory_pathname.realpath}/*"].each do |file|
       puts "- #{file}" if File.file?(file)
     end
   end
