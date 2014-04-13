@@ -1,5 +1,6 @@
-require 'pathname'
-require 'zip'
+require 'pathname' # deals with pathnames in a consistent way
+require 'optparse' # parsing the command line arguments
+require 'zip' # utility for zipping files
 
 module ZipFiles
 
