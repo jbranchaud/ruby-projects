@@ -23,10 +23,17 @@ module ZipFiles
     Dir["#{directory_pathname.realpath}/*"].find_all { |file| File.file?(file) }
   end
 
+  # list each directory (no files) in the given directory
+  def self.list_directories_in_directory(directory=".")
+    directory_pathname = Pathname.new(directory)
+    Dir["#{directory_pathname.realpath}/*"].find_all { |directory| File.directory?(directory) }
+  end
+
 end
 
 if __FILE__==$0
-  p ZipFiles.list_files_in_directory("./")
+  p "Files: #{ZipFiles.list_files_in_directory("./")}"
+  p "Directories: #{ZipFiles.list_directories_in_directory("./")}"
   puts "About to zip the current directory files"
   ZipFiles.zip_current_directory_files
   puts "Done zipping the current directory files"
