@@ -55,7 +55,18 @@ module ZipFiles
   # recursively. If the include_hidden argument is true, zip the hidden
   # files as well. Ouput is the name of the resulting zip file.
   def self._zip_file_list(output,recursive,include_hidden,file_list)
-    puts "this method is not yet supported."
+    if include_hidden
+      puts "including hidden files in the zip isn't supported yet."
+    end
+    if recursive
+      puts "zipping recursively through the directories isn't supported yet."
+    end
+    Zip::File.open(output, Zip::File::CREATE) do |zipfile|
+      file_list.each do |filename|
+        file_pathname = Pathname.new(filename)
+        zipfile.add(file_pathname.basename.to_s, file_pathname.realpath.to_s)
+      end
+    end
   end
 
   # list each file (no directories) in the given directory
