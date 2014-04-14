@@ -39,7 +39,7 @@ describe CountWords do
         "The K&R book is a good C resource." => 8,
         "What... what are you talking about?" => 6,
         "I am writing this program -- the word count program -- that can count words." => 13,
-        "This string is going to be a lot longer than some of the strings we have seen so far. It is even going to have more than one sentence. It might even have a third sentence with some [...] content that has been excluded." => 44
+        "This string is going to be a lot longer than some of the strings we have seen so far. It is even going to have more than one sentence. It might even have a third sentence with some [...] content that has been excluded." => 43
       }
       test_string_hash.each do |string,count|
         CountWords.word_count(string).should eq(count)
