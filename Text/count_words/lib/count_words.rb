@@ -1,5 +1,9 @@
 require "count_words/version"
 
 module CountWords
-  # Your code goes here...
+
+  def self.simple_word_count(string)
+    string.split.length
+  end
+
 end
