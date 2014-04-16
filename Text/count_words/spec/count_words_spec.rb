@@ -64,7 +64,7 @@ describe CountWords do
           "a" => 1,
           "good" => 1,
           "C" => 1,
-          "resource" => 1
+          "resource." => 1
         },
         "What... what are you talking about?" =>
         { "What..." => 1,
@@ -95,14 +95,13 @@ describe CountWords do
           "[...]" => 1,
           "a" => 2,
           "be" => 1,
-          "been" => 2,
+          "been" => 1,
           "content" => 1,
           "even" => 2,
           "excluded." => 1,
           "far." => 1,
           "going" => 2,
-          "has" => 2,
-          "hat" => 1,
+          "has" => 1,
           "have" => 3,
           "is" => 2,
           "longer" => 1,
