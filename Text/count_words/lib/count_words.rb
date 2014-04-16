@@ -41,7 +41,7 @@ module CountWords
   # given a string and a regex, start trimming characters off the front of
   # the string until one is reached that doesn't match the given regex. This
   # method is destructive for the string.
-  def self.trim_from_front!(string, regex)
+  def self.trim_from_front!(string, regex=/\s/)
     while string != '' && string[0] =~ regex
       string.slice!(0)
     end
@@ -51,7 +51,7 @@ module CountWords
   # given a string and a regex, start trimming characters off the back of
   # the string until one is reached that doesn't match the given regex. This
   # method is destructive for the string.
-  def self.trim_from_back!(string, regex)
+  def self.trim_from_back!(string, regex=/\s/)
     while string != '' && string[-1] =~ regex
       string.slice!(-1)
     end
