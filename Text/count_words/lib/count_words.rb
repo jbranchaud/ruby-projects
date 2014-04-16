@@ -45,6 +45,7 @@ module CountWords
     while string != '' && string[0] =~ regex
       string.slice!(0)
     end
+    string
   end
 
   # given a string and a regex, start trimming characters off the back of
@@ -54,6 +55,7 @@ module CountWords
     while string != '' && string[-1] =~ regex
       string.slice!(-1)
     end
+    string
   end
 
 end
