@@ -58,4 +58,13 @@ module CountWords
     string
   end
 
+  # given a string and a regex, trim characters off the back and the front
+  # of the string until characters are reached that do not match the given
+  # regex. This method is destructive for the string.
+  # This method can utilize the trim_from_back! and trim_from_front!
+  # methods.
+  def self.trim!(string, regex=/\s/)
+    self.trim_from_back!(self.trim_from_front!(string, regex), regex)
+  end
+
 end
