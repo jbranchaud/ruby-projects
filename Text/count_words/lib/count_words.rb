@@ -36,6 +36,10 @@ module CountWords
   # word in the string. Returns a hash containing this association.
   def self.word_summary(string)
     summary_hash = {}
+    string.split(/\s/).each do |word|
+      summary_hash[word] = (summary_hash[word] || 0) + 1 if self.trim!(word, /\W/) != ''
+    end
+    summary_hash
   end
 
   # given a string and a regex, start trimming characters off the front of
