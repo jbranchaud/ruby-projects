@@ -72,3 +72,12 @@ module CountWords
   end
 
 end
+
+# execute this if the file is invoked directly
+if __FILE__==$0
+  p ARGV[0]
+  filename = ARGV[0]
+  content = File.read(filename)
+  p CountWords.word_count(content)
+  p CountWords.word_summary(content)
+end
