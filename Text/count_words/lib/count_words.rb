@@ -71,13 +71,24 @@ module CountWords
     self.trim_from_back!(self.trim_from_front!(string, regex), regex)
   end
 
+  # prompt for the user to input a string of which to count the words.
+  def self.prompt_user
+    print "Enter some text on which to perform a word count: "
+    input = gets.chomp
+    p self.word_count(input)
+    p self.word_summary(input)
+  end
+
 end
 
 # execute this if the file is invoked directly
 if __FILE__==$0
-  p ARGV[0]
-  filename = ARGV[0]
-  content = File.read(filename)
-  p CountWords.word_count(content)
-  p CountWords.word_summary(content)
+  if ARGV.length > 0
+    filename = ARGV[0]
+    content = File.read(filename)
+    p CountWords.word_count(content)
+    p CountWords.word_summary(content)
+  else
+    CountWords.prompt_user
+  end
 end
