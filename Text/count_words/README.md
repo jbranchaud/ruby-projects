@@ -3,7 +3,7 @@
 Counts the number of individual words in a string. Consider situations such
 as hyphenated words, contractions, and appearance of non-word characters.
 
-# Extensions
+## Extensions
 
 For added complexity
 
