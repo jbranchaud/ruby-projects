@@ -12,3 +12,13 @@ For added complexity
   - write to a CSV file the total count and words found
   - write to a JSON file the total count and each unique word tied to the
     number of occurrences of that word
+
+## Solution
+
+You can view the solution in
+[`lib/count_words.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/text/count_words/lib/count_words.rb)
+
+Run the solution directly with a filename as the argument:
+
+    ruby ./lib/count_words.rb <filename>
+
