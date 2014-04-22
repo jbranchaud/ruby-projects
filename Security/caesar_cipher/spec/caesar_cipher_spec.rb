@@ -91,10 +91,10 @@ describe CaesarCipher do
 
     it "should decode the given string using the given offset" do
       decoding_hash = {
-        0 =>  { "RUBY" => "RUBY", "HELLO, WORLD!" => "HELLO, WORLD!", "I am a 1337 coder!" => "I AM A 1337 CODER!" },
-        1 =>  { "SVCZ" => "RUBY", "IFMMP, XPSME!" => "HELLO, WORLD!", "J BN B 1337 DPEFS!" => "I am a 1337 coder!" },
-        2 =>  { "TWDA" => "RUBY", "JGNNQ, YQTNF!" => "HELLO, WORLD!", "K CO C 1337 EQFGT!" => "I am a 1337 coder!" },
-        13 => { "EHOL" => "RUBY", "URYYB, JBEYQ!" => "HELLO, WORLD!", "V NZ N 1337 PBQRE!" => "I am a 1337 coder!" }
+        0 =>  { "RUBY" => "RUBY", "HELLO, WORLD!" => "HELLO, WORLD!", "I AM A 1337 CODER!" => "I AM A 1337 CODER!" },
+        1 =>  { "SVCZ" => "RUBY", "IFMMP, XPSME!" => "HELLO, WORLD!", "J BN B 1337 DPEFS!" => "I AM A 1337 CODER!" },
+        2 =>  { "TWDA" => "RUBY", "JGNNQ, YQTNF!" => "HELLO, WORLD!", "K CO C 1337 EQFGT!" => "I AM A 1337 CODER!" },
+        13 => { "EHOL" => "RUBY", "URYYB, JBEYQ!" => "HELLO, WORLD!", "V NZ N 1337 PBQRE!" => "I AM A 1337 CODER!" }
       }
       decoding_hash.each do |offset,decoding|
         decoding.each do |pre_string,post_string|
