@@ -19,6 +19,20 @@ describe CaesarCipher do
       end
     end
 
+    it "should gracefully handle lowercase letters" do
+      CaesarCipher.encode_letter("a",0).should eq("A")
+      CaesarCipher.encode_letter("a",1).should eq("B")
+      CaesarCipher.encode_letter("a",2).should eq("C")
+      CaesarCipher.encode_letter("f",5).should eq("K")
+    end
+
+    it "should return non-alphabet characters as they are" do
+      non_alphabet_characters = [" ","!",".",",","(",")"] + ("0".."9").to_a
+      non_alphabet_characters.each do |char|
+        CaesarCipher.encode_letter(char,5).should eq(char)
+      end
+    end
+
   end
 
   describe 'encode' do
