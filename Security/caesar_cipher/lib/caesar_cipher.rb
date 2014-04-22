@@ -1,3 +1,6 @@
+require 'pathname' # deals with pathnames in a consistent way
+require 'optparse' # parsing the command line arguments
+
 # Caesar Cipher
 
 module CaesarCipher
@@ -29,6 +32,23 @@ module CaesarCipher
     end.join
   end
 
+  # encode the given file with the given offset value, the encoded file
+  # content should be written to the given output file. If no output file is
+  # given, then write it to a new file with '.cc' appended to the end of the
+  # input file's name (e.g. 'input.txt' -> 'input.txt.cc').
+  def self.encode_file(offset,input_filename,output_filename="")
+    # if no output filename is given, then create one
+    if output_filename == ""
+      output_filename = input_filename + ".cc"
+    end
+
+    File.open(output_filename, 'w') do |output_file|
+      File.readlines(input_filename).each do |input_line|
+        output_file.write( self.encode( input_line, offset ) )
+      end
+    end
+  end
+
   # decode a given letter using the given offset value, return the resulting
   # decoded letter.
   def self.decode_letter(letter,offset)
@@ -52,5 +72,31 @@ module CaesarCipher
       self.decode_letter(character,offset)
     end.join
   end
+
+end
+
+# if file is run directly, grab command line argument and invoke either the
+# encode or decode functionality
+if __FILE__==$0
+
+  # parse argument options
+  options = {}
+  options[:encode] = true
+  options[:output] = ""
+  OptionParser.new do |opts|
+    opts.banner = "Usage: caesar_cipher.rb [-e|-d] [-o output] num filename"
+
+    # ignore optional arguments for the moment
+  end.parse!
+
+  if ARGV.length < 2
+    abort("Both an offset number and input filename need to be specified. Exiting.")
+  end
+
+  options[:offset] = ARGV[0].to_i
+  options[:input] = Pathname.new(ARGV[1]).realdirpath.to_s
+  p options
+
+  CaesarCipher.encode_file(options[:offset],options[:input],options[:output])
 
 end
