@@ -21,4 +21,22 @@ describe CaesarCipher do
 
   end
 
+  describe 'encode' do
+
+    it "should encode the given string using the given offset" do
+      encoding_hash = {
+        0 =>  { "RUBY" => "RUBY", "HELLO, WORLD!" => "HELLO, WORLD!", "I am a 1337 coder!" => "I AM A 1337 CODER!" },
+        1 =>  { "RUBY" => "SVCZ", "HELLO, WORLD!" => "IFMMP, XPSME!", "I am a 1337 coder!" => "J BN B 1337 DPEFS!" },
+        2 =>  { "RUBY" => "TWDA", "HELLO, WORLD!" => "JGNNQ, YQTNF!", "I am a 1337 coder!" => "K CO C 1337 EQFGT!" },
+        13 => { "RUBY" => "EHOL", "HELLO, WORLD!" => "URYYB, JBEYQ!", "I am a 1337 coder!" => "V NZ N 1337 PBQRE!" },
+      }
+      encoding_hash.each do |offset,encoding|
+        encoding.each do |pre_string,post_string|
+          CaesarCipher.encode(pre_string,offset).should eq(post_string)
+        end
+      end
+    end
+
+  end
+
 end
