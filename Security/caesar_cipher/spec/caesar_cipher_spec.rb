@@ -39,4 +39,38 @@ describe CaesarCipher do
 
   end
 
+  describe 'decode_letter' do
+
+    it "should decode the given alphabet character based on the offset" do
+      decode_letter_hash = {
+        0 =>  { "A" => "A", "B" => "B", "J" => "J", "R" => "R", "Z" => "Z" },
+        1 =>  { "A" => "Z", "B" => "A", "J" => "I", "R" => "Q", "Z" => "Y" },
+        2 =>  { "A" => "Y", "B" => "Z", "J" => "H", "R" => "P", "Z" => "X" },
+        5 =>  { "A" => "V", "B" => "W", "J" => "E", "R" => "M", "Z" => "U" },
+        25 => { "A" => "B", "B" => "C", "J" => "K", "R" => "S", "Z" => "A" },
+        26 => { "A" => "A", "B" => "B", "J" => "J", "R" => "R", "Z" => "Z" },
+      }
+      decode_letter_hash.each do |offset,letter_hash|
+        letter_hash.each do |letter,decoded_letter|
+          CaesarCipher.decode_letter(letter,offset).should eq(decoded_letter)
+        end
+      end
+    end
+
+    it "should gracefully handle lowercase letters" do
+      CaesarCipher.decode_letter("a",0).should eq("A")
+      CaesarCipher.decode_letter("a",1).should eq("Z")
+      CaesarCipher.decode_letter("a",2).should eq("Y")
+      CaesarCipher.decode_letter("f",5).should eq("A")
+    end
+
+    it "should return non-alphabet characters as they are" do
+      non_alphabet_characters = [" ","!",".",",","(",")"] + ("0".."9").to_a
+      non_alphabet_characters.each do |char|
+        CaesarCipher.decode_letter(char,3).should eq(char)
+      end
+    end
+
+  end
+
 end
