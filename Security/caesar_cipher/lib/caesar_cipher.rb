@@ -45,4 +45,12 @@ module CaesarCipher
     ((( upper_letter.ord - 65 - offset ) % 26 ) + 65 ).chr("UTF-8")
   end
 
+  # decode a given string using the given offset value, return the resulting
+  # decoded string.
+  def self.decode(string,offset)
+    string.split("").map do |character|
+      self.decode_letter(character,offset)
+    end.join
+  end
+
 end
