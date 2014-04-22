@@ -2,7 +2,7 @@
 
 module CaesarCipher
 
-  def self.offset_letter(letter,offset)
+  def self.encode_letter(letter,offset)
     # if it isn't an alphabet character, return it as is
     return letter if letter =~ /[^a-zA-Z]/
 
@@ -25,7 +25,7 @@ module CaesarCipher
   # encoded string.
   def self.encode(string,offset)
     string.split("").map do |character|
-      self.offset_letter(character,offset)
+      self.encode_letter(character,offset)
     end.join
   end
 
