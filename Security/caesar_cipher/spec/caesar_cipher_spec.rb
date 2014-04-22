@@ -42,7 +42,7 @@ describe CaesarCipher do
         0 =>  { "RUBY" => "RUBY", "HELLO, WORLD!" => "HELLO, WORLD!", "I am a 1337 coder!" => "I AM A 1337 CODER!" },
         1 =>  { "RUBY" => "SVCZ", "HELLO, WORLD!" => "IFMMP, XPSME!", "I am a 1337 coder!" => "J BN B 1337 DPEFS!" },
         2 =>  { "RUBY" => "TWDA", "HELLO, WORLD!" => "JGNNQ, YQTNF!", "I am a 1337 coder!" => "K CO C 1337 EQFGT!" },
-        13 => { "RUBY" => "EHOL", "HELLO, WORLD!" => "URYYB, JBEYQ!", "I am a 1337 coder!" => "V NZ N 1337 PBQRE!" },
+        13 => { "RUBY" => "EHOL", "HELLO, WORLD!" => "URYYB, JBEYQ!", "I am a 1337 coder!" => "V NZ N 1337 PBQRE!" }
       }
       encoding_hash.each do |offset,encoding|
         encoding.each do |pre_string,post_string|
@@ -82,6 +82,24 @@ describe CaesarCipher do
       non_alphabet_characters = [" ","!",".",",","(",")"] + ("0".."9").to_a
       non_alphabet_characters.each do |char|
         CaesarCipher.decode_letter(char,3).should eq(char)
+      end
+    end
+
+  end
+
+  describe 'decode' do
+
+    it "should decode the given string using the given offset" do
+      decoding_hash = {
+        0 =>  { "RUBY" => "RUBY", "HELLO, WORLD!" => "HELLO, WORLD!", "I am a 1337 coder!" => "I AM A 1337 CODER!" },
+        1 =>  { "SVCZ" => "RUBY", "IFMMP, XPSME!" => "HELLO, WORLD!", "J BN B 1337 DPEFS!" => "I am a 1337 coder!" },
+        2 =>  { "TWDA" => "RUBY", "JGNNQ, YQTNF!" => "HELLO, WORLD!", "K CO C 1337 EQFGT!" => "I am a 1337 coder!" },
+        13 => { "EHOL" => "RUBY", "URYYB, JBEYQ!" => "HELLO, WORLD!", "V NZ N 1337 PBQRE!" => "I am a 1337 coder!" }
+      }
+      decoding_hash.each do |offset,decoding|
+        decoding.each do |pre_string,post_string|
+          CaesarCipher.decode(pre_string,offset).should eq(post_string)
+        end
       end
     end
 
