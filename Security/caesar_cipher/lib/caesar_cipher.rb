@@ -79,7 +79,7 @@ module CaesarCipher
   # the input file's name (e.g. 'input.txt' -> 'input.txt.dec').
   def self.decode_file(offset,input_filename,output_filename="")
     # if no output file is given, then create one
-    if output_filename = ""
+    if output_filename == ""
       output_filename = input_filename + '.dec'
     end
 
@@ -111,6 +111,14 @@ if __FILE__==$0
     # check for the decode option
     opts.on("-d", "--decode", "Decode the given file with the given offset value.") do |d|
       options[:encode] = false
+    end
+
+    # grab the output filename if one is specified
+    opts.on("-o FILENAME", "--output FILENAME", "The name of the file to output the encoded/decoded message to.") do |o|
+      if o
+        p "Output Filename: #{o}"
+        options[:output] = Pathname.new(o).realdirpath.to_s
+      end
     end
 
   end.parse!
