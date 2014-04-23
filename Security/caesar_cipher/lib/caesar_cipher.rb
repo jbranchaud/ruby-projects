@@ -123,14 +123,16 @@ if __FILE__==$0
 
   end.parse!
 
+  # two arguments are required, abort if they aren't present
   if ARGV.length < 2
     abort("Both an offset number and input filename need to be specified. Exiting.")
   end
 
+  # grab the two mandatory command line options: offset and input file
   options[:offset] = ARGV[0].to_i
   options[:input] = Pathname.new(ARGV[1]).realdirpath.to_s
-  p options
 
+  # if encode is true, then encode the file, otherwise decode the file.
   if options[:encode]
     CaesarCipher.encode_file(options[:offset],options[:input],options[:output])
   else
