@@ -34,12 +34,12 @@ module CaesarCipher
 
   # encode the given file with the given offset value, the encoded file
   # content should be written to the given output file. If no output file is
-  # given, then write it to a new file with '.cc' appended to the end of the
-  # input file's name (e.g. 'input.txt' -> 'input.txt.cc').
+  # given, then write it to a new file with '.enc' appended to the end of the
+  # input file's name (e.g. 'input.txt' -> 'input.txt.enc').
   def self.encode_file(offset,input_filename,output_filename="")
     # if no output filename is given, then create one
     if output_filename == ""
-      output_filename = input_filename + ".cc"
+      output_filename = input_filename + ".enc"
     end
 
     File.open(output_filename, 'w') do |output_file|
