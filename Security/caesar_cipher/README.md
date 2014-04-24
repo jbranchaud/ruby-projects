@@ -33,7 +33,7 @@ and if not used, a default name based on the input file will be used.
 ## Solution
 
 You can view the solution in
-[`lib/caesar_cipher.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/security/caesar_cipher/lib/caesar_cipher.rb)
+[`lib/caesar_cipher.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/Security/caesar_cipher/lib/caesar_cipher.rb)
 
 Or directly with ruby like so:
 
