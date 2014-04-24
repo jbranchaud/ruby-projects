@@ -12,7 +12,7 @@ number. Thus,
     ruby ./lib/caesar_cipher.rb 11 test.txt
 
 will by default encode `test.txt` with an offset of `11`. The output file,
-`test.txt.cc`, can be decoded using the value of `11`.
+`test.txt.enc`, can be decoded using the value of `11`.
 
 To explicitly invoke the encode functionality, use the `-e` or `--encode`
 command line argument, like so:
@@ -23,7 +23,7 @@ To decode an encoded file, use either the `-d` or `--decode` command line
 arguments along with the number it was encoded with and the encoded filename,
 like so:
 
-    ruby ./lib/caesar_cipher.rb -d 11 test.txt.cc
+    ruby ./lib/caesar_cipher.rb -d 11 test.txt.enc
 
 Use the `-o` option to specify a name for the output file. This is optional
 and if not used, a default name based on the input file will be used.
