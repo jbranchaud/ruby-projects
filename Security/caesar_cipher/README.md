@@ -24,3 +24,15 @@ arguments along with the number it was encoded with and the encoded filename,
 like so:
 
     ruby ./lib/caesar_cipher.rb -d 11 test.txt.cc
+
+## Solution
+
+You can view the solution in
+[`lib/caesar_cipher.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/security/caesar_cipher/lib/caesar_cipher.rb)
+
+Or directly with ruby like so:
+
+    ruby ./lib/caesar_cipher.rb <num> <filename>
+
+See the Usage section for more details on running the program and the
+command line arguments that are available.
