@@ -11,7 +11,7 @@ Enter a string and the program counts the number of vowels in the text.
 ## Solution
 
 You can view the solution in
-[`lib/count_vowels.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/text/count_vowels/lib/count_vowels.rb)
+[`lib/count_vowels.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/Text/count_vowels/lib/count_vowels.rb)
 
 You can run the solution with rake like so:
 
