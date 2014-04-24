@@ -4,7 +4,7 @@ Implement a Caesar cipher, both encoding and decoding. The key is an integer fro
 
 ## Usage
 
-ruby ./lib/caesar_cipher.rb [-e|-d] num filename
+ruby ./lib/caesar_cipher.rb [-e|-d] [-o output] num filename
 
 The default functionality is to encode the given file using the given encode
 number. Thus,
@@ -24,6 +24,11 @@ arguments along with the number it was encoded with and the encoded filename,
 like so:
 
     ruby ./lib/caesar_cipher.rb -d 11 test.txt.cc
+
+Use the `-o` option to specify a name for the output file. This is optional
+and if not used, a default name based on the input file will be used.
+
+    ruby ./lib/caesar_cipher.rb -o decoded.txt -d encoded.txt
 
 ## Solution
 
