@@ -12,7 +12,7 @@ Checks if the string entered by the user is a palindrome. That is if it reads th
 ## Solution
 
 You can view the solution in
-[`lib/palindrome.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/text/palindrome/lib/palindrome.rb)
+[`lib/palindrome.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/Text/palindrome/lib/palindrome.rb)
 
 You can run the solution with rake like so:
 
