@@ -16,7 +16,7 @@ For added complexity
 ## Solution
 
 You can view the solution in
-[`lib/count_words.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/text/count_words/lib/count_words.rb)
+[`lib/count_words.rb`](https://github.com/jbranchaud/ruby-projects/blob/master/Text/count_words/lib/count_words.rb)
 
 Run the solution directly with a filename as the argument:
 
