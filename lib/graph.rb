@@ -1,4 +1,4 @@
-require './graph/graph.rb'
+require 'graph/graph.rb'
 
 g1 = Graph.new('g1')
 p g1
