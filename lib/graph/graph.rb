@@ -11,6 +11,10 @@ module Graph
       @name = name
       @nodes = [] # empty list of nodes
     end
+
+    def add(value)
+      @nodes.push(Node.new(value))
+    end
   
   end
   
