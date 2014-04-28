@@ -14,6 +14,18 @@ describe Graph do
 
     end
 
+    describe 'add' do
+
+      it "should add a node to the graph with the given value" do
+        graph1 = Graph::Graph.new('graph1')
+        graph1.nodes.empty?.should eq(true)
+        graph1.add(11)
+        graph1.nodes.empty?.should eq(false)
+        graph1.nodes[0].value.should eq(11)
+      end
+
+    end
+
   end
 
   describe 'Node' do
