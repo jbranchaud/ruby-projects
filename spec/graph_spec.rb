@@ -16,4 +16,19 @@ describe Graph do
 
   end
 
+  describe 'Node' do
+
+    describe 'new' do
+
+      it "should create a new node with the given value and no incoming or outgoing nodes" do
+        node1 = Graph::Node.new(11)
+        node1.value.should eq(11)
+        node1.incoming.empty?.should eq(true)
+        node1.outgoing.empty?.should eq(true)
+      end
+
+    end
+
+  end
+
 end
