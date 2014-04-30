@@ -13,7 +13,7 @@ module Graph
     end
 
     def add(value)
-      @nodes.push(Node.new(value))
+      @nodes << Node.new(value)
     end
   
   end
