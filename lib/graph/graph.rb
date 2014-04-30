@@ -12,10 +12,12 @@ module Graph
       @nodes = [] # empty list of nodes
     end
 
+    # add a node to the graph with the given value
     def add(value)
       @nodes << Node.new(value)
     end
 
+    # add the given node to the graph
     def add_node(node)
       @nodes << node
     end
