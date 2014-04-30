@@ -15,6 +15,10 @@ module Graph
     def add(value)
       @nodes << Node.new(value)
     end
+
+    def add_node(node)
+      @nodes << node
+    end
   
   end
   
