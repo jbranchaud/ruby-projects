@@ -42,7 +42,7 @@ describe Graph do
         node1 = Graph::Node.new(2)
         node2 = Graph::Node.new(11)
         node3 = Graph::Node.new(5)
-        graph1.nodes.empty?should eq(true)
+        graph1.nodes.empty?.should eq(true)
         graph1.add_node(node1)
         graph1.nodes.length.should eq(1)
         graph1.add_node(node2)
