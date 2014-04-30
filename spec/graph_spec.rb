@@ -26,6 +26,34 @@ describe Graph do
 
     end
 
+    describe 'add_node' do
+
+      it "should be able to add a single Node object to the graph" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(5)
+        graph1.nodes.empty?.should eq(true)
+        graph1.add_node(node1)
+        graph1.nodes.length.should eq(1)
+        graph1.nodes.include?(node1).should eq(true)
+      end
+
+      it "should be able to add multiple Node objects to the graph" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(2)
+        node2 = Graph::Node.new(11)
+        node3 = Graph::Node.new(5)
+        graph1.nodes.empty?should eq(true)
+        graph1.add_node(node1)
+        graph1.nodes.length.should eq(1)
+        graph1.add_node(node2)
+        graph1.nodes.length.should eq(2)
+        graph1.nodes.include?(node1).should eq(true)
+        graph1.nodes.include?(node2).should eq(true)
+        graph1.nodes.include?(node3).should eq(false)
+      end
+
+    end
+
   end
 
   describe 'Node' do
