@@ -54,6 +54,35 @@ describe Graph do
 
     end
 
+    describe 'add_nodes' do
+
+      it "should be able to handle an empty array of nodes" do
+        graph1 = Graph::Graph.new('graph1')
+        graph1.nodes.empty?.should eq(true)
+        graph1.add_nodes([])
+        graph1.nodes.empty?.should eq(true)
+      end
+
+      it "should be able to add an array containing a single node" do
+        graph1 = Graph::Graph.new('graph1')
+        graph1.nodes.empty?.should eq(true)
+        node1 = Graph::Node.new(2)
+        graph1.add_nodes([node1])
+        graph1.nodes.length.should eq(1)
+      end
+
+      it "should be able to add an array containing multiple nodes" do
+        graph1 = Graph::Graph.new('graph1')
+        graph1.nodes.empty?.should eq(true)
+        node1 = Graph::Node.new(3)
+        node2 = Graph::Node.new(4)
+        node3 = Graph::Node.new(5)
+        graph1.add_nodes([node3,node2,node1])
+        graph1.nodes.length.should eq(3)
+      end
+
+    end
+
   end
 
   describe 'Node' do
