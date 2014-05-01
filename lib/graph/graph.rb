@@ -21,6 +21,11 @@ module Graph
     def add_node(node)
       @nodes << node
     end
+
+    # add the array of nodes to the graph
+    def add_nodes(node_array)
+      @nodes += node_array
+    end
   
   end
   
