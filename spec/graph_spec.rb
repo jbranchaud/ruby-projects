@@ -54,6 +54,29 @@ describe Graph do
 
     end
 
+    describe 'remove_node' do
+
+      it "should be able to remove a Node object from the graph" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(5)
+        graph1.add_node(node1)
+        graph1.nodes.length.should eq(1)
+        graph1.remove_node(node1)
+        graph1.nodes.length.should eq(0)
+      end
+
+      it "should remove nothing from the graph if the node isn't in the graph" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(5)
+        node2 = Graph::Node.new(11)
+        graph1.add_node(node2)
+        graph1.nodes.length.should eq(1)
+        graph1.remove_node(node1)
+        graph1.nodes.length.should eq(1)
+      end
+
+    end
+
     describe 'add_nodes' do
 
       it "should be able to handle an empty array of nodes" do
