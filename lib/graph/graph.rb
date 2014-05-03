@@ -26,6 +26,12 @@ module Graph
     def add_nodes(node_array)
       @nodes += node_array
     end
+
+    # remove the given node from the graph
+    def remove_node(node)
+      @nodes.delete(node)
+      # the edges/vertices are going to have to be handled too
+    end
   
   end
   
