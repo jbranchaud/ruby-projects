@@ -30,7 +30,7 @@ module Graph
     # remove the given node from the graph
     def remove_node(node)
       @nodes.delete(node)
-      # the edges/vertices are going to have to be handled too
+      # the edges are going to have to be handled too
       # that might look like iterating over all the nodes in the @incoming
       # and @outgoing lists of the given node and for each of those nodes,
       # the the references to this node will need to be removed.
