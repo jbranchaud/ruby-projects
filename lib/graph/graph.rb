@@ -39,6 +39,16 @@ module Graph
       #   out.incoming.delete(node)
       # }
     end
+
+    # connect the first node to the second node (directionality)
+    # the second node will be added to the outgoing list of the first node
+    # and the first node will be added to the incoming list of the second
+    # node.
+    def connect_to(node1,node2)
+      # assuming node1 and node2 are part of this graph
+      node1.outgoing << node2
+      node2.incoming << node1
+    end
   
   end
   
