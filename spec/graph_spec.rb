@@ -106,6 +106,39 @@ describe Graph do
 
     end
 
+    describe 'connect_to' do
+
+      it "should connect the first node to the second node (directionality)" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(2)
+        node2 = Graph::Node.new(11)
+        graph1.add_nodes([node1,node2])
+        node1.outgoing.empty?.should eq(true)
+        node2.incoming.empty?.should eq(true)
+        graph1.connect_to(node1,node2)
+        node1.outgoing.include?(node2).should eq(true)
+        node2.incoming.include?(node1).should eq(true)
+      end
+
+      it "should be able to make a connection in each direction" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(2)
+        node2 = Graph::Node.new(11)
+        graph1.add_nodes([node1,node2])
+        node1.outgoing.empty?.should eq(true)
+        node2.incoming.empty?.should eq(true)
+        graph1.connect_to(node1,node2) # connect node1 to node2
+        graph1.connect_to(node2,node1) # connect node2 to node1
+        node1.outgoing.include?(node2).should eq(true)
+        node2.incoming.include?(node1).should eq(true)
+        node1.incoming.include?(node2).should eq(true)
+        node2.outgoing.include?(node1).should eq(true)
+      end
+
+      # what if one node isn't part of the graph, do we do a check?
+
+    end
+
   end
 
   describe 'Node' do
