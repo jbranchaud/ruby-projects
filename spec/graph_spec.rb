@@ -106,6 +106,44 @@ describe Graph do
 
     end
 
+    describe 'remove_nodes' do
+
+      it "should remove all the corresponding nodes in a given array of nodes" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(5)
+        node2 = Graph::Node.new(4)
+        node3 = Graph::Node.new(3)
+        graph1.add_nodes([node1,node3,node2])
+        graph1.nodes.length.should eq(3)
+        graph1.remove_nodes([node1,node2,node3])
+        graph1.nodes.length.should eq(0)
+      end
+
+      it "should remove nothing when an empty list is given" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(5)
+        node2 = Graph::Node.new(4)
+        node3 = Graph::Node.new(3)
+        graph1.add_nodes([node1,node3,node2])
+        graph1.nodes.length.should eq(3)
+        graph1.remove_nodes([])
+        graph1.nodes.length.should eq(3)
+      end
+
+      it "should remove only those nodes that are included in the given array" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(5)
+        node2 = Graph::Node.new(4)
+        node3 = Graph::Node.new(3)
+        graph1.add_nodes([node1,node3,node2])
+        graph1.nodes.length.should eq(3)
+        graph1.remove_nodes([node1,node3])
+        graph1.nodes.length.should eq(1)
+        graph1.nodes.include?(node2).should eq(true)
+      end
+
+    end
+
     describe 'connect_to' do
 
       it "should connect the first node to the second node (directionality)" do
