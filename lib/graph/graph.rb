@@ -40,6 +40,11 @@ module Graph
       # }
     end
 
+    # remove the given nodes from the graph
+    def remove_nodes(node_array)
+      node_array.each { |node| @nodes.delete(node) }
+    end
+
     # connect the first node to the second node (directionality)
     # the second node will be added to the outgoing list of the first node
     # and the first node will be added to the incoming list of the second
