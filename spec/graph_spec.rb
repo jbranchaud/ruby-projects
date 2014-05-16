@@ -177,6 +177,24 @@ describe Graph do
 
     end
 
+    describe 'disconnect' do
+
+      it "should remove a direct connection between the two given nodes" do
+        graph1 = Graph::Graph.new('graph1')
+        node1 = Graph::Node.new(55)
+        node2 = Graph::Node.new(66)
+        graph1.add_nodes([node1,node2])
+        graph1.connect_to(node1,node2)
+        node1.outgoing.include?(node2).should eq(true)
+        node2.incoming.include?(node1).should eq(true)
+        # now disconnect node1 and node2, then check
+        graph1.disconnect(node1,node2)
+        node1.outgoing.include?(node2).should eq(false)
+        node2.incoming.include?(node1).should eq(false)
+      end
+
+    end
+
   end
 
   describe 'Node' do
