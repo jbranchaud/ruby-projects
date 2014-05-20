@@ -220,3 +220,14 @@ Solutions to @Karan's Projects repository implemented in Ruby.
 
 * [Martyr2’s Mega Project List](http://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/)
 * [Rosetta Code](http://rosettacode.org/)
+
+## License
+
+&copy; 2014 Josh Branchaud
+
+The solutions to this projects are implemented by Josh Branchaud and are
+licensed under the MIT license. See LICENSE for more details.
+
+The project descriptions themselves are from the Projects repository created
+by Karan Goel. They too are under the MIT license. See Projects-LICENSE.md
+for more details.
