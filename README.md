@@ -1,5 +1,6 @@
-Mega Project List
-========
+# Ruby Projects
+
+Solutions to @Karan's Projects repository implemented in Ruby.
 
 Numbers
 ---------
