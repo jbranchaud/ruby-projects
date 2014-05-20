@@ -2,6 +2,23 @@
 
 Solutions to @Karan's Projects repository implemented in Ruby.
 
+## Starting a project
+
+Follow these steps to start working on a solution to a project:
+
+- Navigate to the categorical directory of the project (e.g. for the
+  palindrome project, move to the `Text` directory)
+- Run `bundle gem <project-name> -t` to generate the directory for the
+  project with everything needed included a subdirectory for rspec tests
+- Navigate to the new project directory
+- The `bundle gem` command will have initialized the project with its own
+  `git` setup. This whole project is already under `git` version control
+  though, so this can be removed. Run `rm -rf .git .gitignore` to remove the
+  git stuff
+- Create a `README.md` with the main header as the project's name and a
+  quoted description of the project (the description can be taken directly
+  from the descriptions in the main `README.md` file for this repository)
+
 ## Project Descriptions
 
 ### Numbers
