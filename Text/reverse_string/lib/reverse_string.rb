@@ -1,5 +1,9 @@
 require "reverse_string/version"
 
 module ReverseString
-  # Your code goes here...
+
+  def self.reverse_string(string)
+    string.reverse
+  end
+
 end
